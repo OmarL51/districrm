@@ -13,6 +13,7 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from django.conf import settings
 from django.contrib import admin
 from django.urls import path, include
 from drf_yasg.views import get_schema_view
@@ -39,6 +40,8 @@ from zones.api.router import router_zone
 from quotes.api.router import router_quote
 # Importamos nuestras rutas de la API quotetypes
 from quotetypes.api.router import router_quotety
+# Importamos nuestras rutas de la API means_c
+from means_c.api.router import router_mean_c
 
 
 schema_view = get_schema_view(
@@ -76,10 +79,12 @@ urlpatterns = [
     path('api/', include(router_unexpected.urls)),
     # Rutas de la api means(Medios)
     path('api/', include(router_mean.urls)),
-    # Rutas de la api mzones(Zonas)
+    # Rutas de la api zones(Zonas)
     path('api/', include(router_zone.urls)),
     # Rutas de la api quotes(Cotizaciones)
     path('api/', include(router_quote.urls)),
-    # Rutas de la api quotetypes(Tipoes de cotizaciones)
+    # Rutas de la api quotetypes(Tipos de cotizaciones)
     path('api/', include(router_quotety.urls)),
-]
+    # Rutas de la api means_c(Medios de cotizaciones)
+    path('api/', include(router_quotety.urls)),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

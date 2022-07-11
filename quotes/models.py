@@ -14,6 +14,8 @@ class Quote(models.Model):
     assign = models.CharField(max_length=100)
     mean = models.ForeignKey(
         'means.Mean', on_delete=models.SET_NULL, null=True, blank=True)
+    mean_c = models.ForeignKey(
+        'means_c.Mean_c', on_delete=models.SET_NULL, null=True, blank=True)
     recotization = models.BooleanField()
     third = models.ForeignKey(
         'thirds.Third', on_delete=models.SET_NULL, null=True, blank=True)

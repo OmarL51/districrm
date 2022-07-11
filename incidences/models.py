@@ -16,12 +16,14 @@ class Incidence(models.Model):
     assign = models.CharField(max_length=100)
     order = models.IntegerField()
     line = models.IntegerField(default=0)
+    line_r = models.IntegerField(default=0)
     rmv = models.IntegerField()
     unexpected = models.ForeignKey(
         'unexpecteds.Unexpected', on_delete=models.SET_NULL, null=True, blank=True)
     date_rmv = models.DateTimeField(null=True, blank=True)
     third = models.ForeignKey(
         'thirds.Third', on_delete=models.SET_NULL, null=True, blank=True)
+    observation = models.CharField(max_length=500, default="")
 
     def __str__(self):
         return self.tittle

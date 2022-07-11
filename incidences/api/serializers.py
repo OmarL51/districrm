@@ -28,5 +28,5 @@ class IncidenceSerializer(ModelSerializer):
 
     class Meta:
         model = Incidence
-        fields = ['id', 'date_oc',  'incidencety',  'incidencety_data', 'tittle', 'mean', 'mean_data', 'status', 'status_data', 'date', 'assign', 'order', 'line',
-                  'rmv', 'unexpected', 'unexpected_data', 'oc_client', 'date_rmv', 'third', 'third_data']
+        fields = ['id', 'date_oc',  'incidencety',  'incidencety_data', 'tittle', 'mean', 'mean_data', 'status', 'status_data', 'date', 'assign', 'order', 'line', 'line_r',
+                  'rmv', 'unexpected', 'unexpected_data', 'oc_client', 'date_rmv', 'third', 'third_data', 'observation']

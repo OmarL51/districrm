@@ -10,6 +10,7 @@ from thirds.api.serializers import ThirdSerializer
 from means.api.serializers import MeanSerializer
 from zones.api.serializers import ZoneSerializer
 from quotetypes.api.serializers import QuotetySerializer
+from means_c.api.serializers import MeanCSerializer
 
 
 class QuoteSerializer(ModelSerializer):
@@ -17,6 +18,9 @@ class QuoteSerializer(ModelSerializer):
         source='incidencety', read_only=True)
 
     mean_data = MeanSerializer(
+        source='mean', read_only=True)
+
+    mean_c_data = MeanCSerializer(
         source='mean', read_only=True)
 
     unexpected_data = UnexpectedSerializer(
@@ -36,5 +40,5 @@ class QuoteSerializer(ModelSerializer):
 
     class Meta:
         model = Quote
-        fields = ['id', 'date_cot', 'incidencety',  'incidencety_data', 'quotety', 'quotety_data', 'tittle_cot', 'num_cot', 'line', 'assign', 'mean', 'mean_data',  'recotization', 'third', 'third_data', 'status', 'status_data', 'zone', 'zone_data',
+        fields = ['id', 'date_cot', 'incidencety',  'incidencety_data', 'quotety', 'quotety_data', 'tittle_cot', 'num_cot', 'line', 'assign', 'mean', 'mean_data', 'mean_c',  'mean_c_data', 'recotization', 'third', 'third_data', 'status', 'status_data', 'zone', 'zone_data',
                   'unexpected', 'unexpected_data', 'date_ppta',  'date', 'observation']
