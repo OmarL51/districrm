@@ -95,20 +95,12 @@ WSGI_APPLICATION = 'districrm.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'sql_server.pyodbc',
-        'NAME': 'Distrimedical-bd-01',
-        'USER': 'distrimanager',
-        'PASSWORD': '$Superuser$2022',
-        'HOST': 'distrimedical-bdserver-01.database.windows.net',
-        'PORT': '1433',
-
-        'OPTIONS': {
-            'driver': 'ODBC Driver 17 for SQL Server',
-        },
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
-DATABASE_CONNECTION_POOLING = False
+# DATABASE_CONNECTION_POOLING = False
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
