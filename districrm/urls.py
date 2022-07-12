@@ -87,4 +87,5 @@ urlpatterns = [
     path('api/', include(router_quotety.urls)),
     # Rutas de la api means_c(Medios de cotizaciones)
     path('api/', include(router_quotety.urls)),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+]
+# + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
