@@ -18,7 +18,7 @@ from django.contrib import admin
 from django.urls import path, include
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
-
+from django.conf.urls.static import static
 
 # Importamos nuestras rutas de la API users
 from users.api.router import router_user
@@ -87,5 +87,4 @@ urlpatterns = [
     path('api/', include(router_quotety.urls)),
     # Rutas de la api means_c(Medios de cotizaciones)
     path('api/', include(router_quotety.urls)),
-]
-# + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
