@@ -60,4 +60,4 @@ jobs:
         with:
           app-name: 'districrm'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_26837C05A4D442DFBAED119823CBDD22 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_5635D68022854C1DAC8A9144B4E6136D }}
