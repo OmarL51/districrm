@@ -8,4 +8,4 @@ from thirds.api.serializers import ThirdSerializer
 class ThirdApiViewSet(ModelViewSet):
     permission_classes = [IsAuthenticatedOrReadOnly]
     serializer_class = ThirdSerializer
-    queryset = Third.objects.all()
+    queryset = Third.objects.all().order_by('nombres')

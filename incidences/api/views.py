@@ -9,7 +9,7 @@ from incidences.api.serializers import IncidenceSerializer
 class IncidenceApiViewSet(ModelViewSet):
     permission_classes = [IsAuthenticatedOrReadOnly]
     serializer_class = IncidenceSerializer
-    queryset = Incidence.objects.all()
-    # FILTROS
+    queryset = Incidence.objects.all().order_by('-date')
+
     filter_backends = [DjangoFilterBackend]
     filterset_fields = ['status', 'date', 'assign', 'order', 'rmv', 'third']
